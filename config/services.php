@@ -30,4 +30,20 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'wompi' => [
+        'testMode' => true,
+        'sandbox' => [
+            'pubic' => 'pub_test_t4FgtjamokNSyaEr7mccPFrZQyiTFFlX',
+            'private' => 'prv_test_XZQDovyp2M2v9X6TWSLIbM8TkHHOWLxR',
+            'events' => 'test_events_ieX3KzX5awW8VUVSpLPasfnUFWhSdMT8',
+            'endpoint' => ''
+        ],
+        'prod' => [
+            'public' => '',
+            'private' => '',
+            'events' => '',
+            'endpoint' => ''
+        ]
+    ]
+
 ];
