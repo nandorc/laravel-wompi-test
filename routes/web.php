@@ -20,6 +20,9 @@ Route::prefix('/widget-webcheckout')->name('widget-webcheckout.')->group(functio
     Route::get('/', function () {
         return view('pages.widget-webcheckout.index');
     })->name('index');
+    Route::get('/widget', function () {
+        return view('pages.widget-webcheckout.widget');
+    })->name('widget');
 });
 Route::prefix('/plugins')->name('plugins.')->group(function () {
     Route::get('/', function () {
