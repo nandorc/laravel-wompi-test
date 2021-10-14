@@ -4,7 +4,7 @@
 >
 > **Email:** <dsoftcolombia@gmail.com>
 >
-> **LinkedIn:** <https://www.linkedin.com/in/danielfriverac>
+> **LinkedIn:** [danielfriverac](https://www.linkedin.com/in/danielfriverac/)
 
 ## General Description
 
