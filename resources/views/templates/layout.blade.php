@@ -34,7 +34,7 @@ $isDarkTheme = isset($theme) && $theme == 'dark';
 <body @if ($isDarkTheme)class='dark'@endif>
   <x-organisms.layout.header />
   <x-organisms.layout.navigation />
-  <x-organisms.layout.main>@yield('body__content')</x-organisms.layout.main>
+  <main>@yield('body__content')</main>
   <x-organisms.layout.footer />
   @stack('body__before-scripts')
   <x-molecules.body.scripts />

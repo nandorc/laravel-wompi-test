@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0.5rem;
+    background-color: lightgray;
+}
+nav a:link,
+nav a:active,
+nav a:hover,
+nav a:visited {
+    padding: 1rem;
+    text-decoration: none;
+    color: black;
+}
+nav .brand {
+    font-size: x-large;
+    font-weight: bold;
+}
+nav .links {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+main .breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0.5rem;
+    list-style: none;
+}
+main .breadcrumb a:link,
+main .breadcrumb a:active,
+main .breadcrumb a:hover,
+main .breadcrumb a:visited {
+    text-decoration: none;
+    color: black;
+}
+main .breadcrumb .divider {
+    margin: 0 1rem;
+}
+main .breadcrumb a:first-of-type {
+    margin-left: 0;
+}
