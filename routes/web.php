@@ -15,4 +15,19 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('pages.welcome');
+})->name('welcome');
+Route::prefix('/widget-webcheckout')->name('widget-webcheckout.')->group(function () {
+    Route::get('/', function () {
+        return view('pages.widget-webcheckout.index');
+    })->name('index');
+});
+Route::prefix('/plugins')->name('plugins.')->group(function () {
+    Route::get('/', function () {
+        return view('pages.plugins.index');
+    })->name('index');
+});
+Route::prefix('/payment-api')->name('payment-api.')->group(function () {
+    Route::get('/', function () {
+        return view('pages.payment-api.index');
+    })->name('index');
 });
