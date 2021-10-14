@@ -33,16 +33,16 @@ return [
     'wompi' => [
         'testMode' => true,
         'sandbox' => [
-            'pubic' => 'pub_test_t4FgtjamokNSyaEr7mccPFrZQyiTFFlX',
-            'private' => 'prv_test_XZQDovyp2M2v9X6TWSLIbM8TkHHOWLxR',
-            'events' => 'test_events_ieX3KzX5awW8VUVSpLPasfnUFWhSdMT8',
-            'endpoint' => ''
+            'pubic' => env('WOMPI_TEST_PUBLIC'),
+            'private' => env('WOMPI_TEST_PRIVATE'),
+            'events' => env('WOMPI_TEST_EVENTS'),
+            'endpoint' => 'https://sandbox.wompi.co/v1'
         ],
         'prod' => [
-            'public' => '',
-            'private' => '',
-            'events' => '',
-            'endpoint' => ''
+            'public' => env('WOMPI_PUBLIC'),
+            'private' => env('WOMPI_PRIVATE'),
+            'events' => env('WOMPI_EVENTS'),
+            'endpoint' => 'https://production.wompi.co/v1'
         ]
     ]
 
