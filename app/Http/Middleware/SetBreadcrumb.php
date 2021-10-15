@@ -12,7 +12,9 @@ class SetBreadcrumb
         'index' => ['welcome' => 'Inicio'],
         'widget-webcheckout' => [
             'index' => ['widget-webcheckout.index' => 'Widget y WebCheckout'],
-            'widget' => ['widget-webcheckout.widget' => 'Widget'],
+            'widget' => [
+                'index' => ['widget-webcheckout.widget' => 'Widget']
+            ],
         ],
         'plugins' => [
             'index' => ['plugins.index' => 'Plugins E-commerce']
