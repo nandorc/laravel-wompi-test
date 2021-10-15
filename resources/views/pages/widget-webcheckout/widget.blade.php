@@ -2,13 +2,14 @@
 @section('head__title', 'Widget')
 @section('section__content')
   <div>
-    <h1>Información para el pago</h1>
+    <h2>Información para el pago</h1>
     <table>
       <tr>
         <td>Referencia de pago:</td>
-        <td>{{ $paymentReference ?? '' }}</td>
+        <td>{{ $reference ?? '' }}</td>
       </tr>
     </table>
+    <h2>Botón de Pago</h2>
     <form>
       <script src="https://checkout.wompi.co/widget.js"
         data-render="button"
@@ -45,5 +46,7 @@
             @isset($taxInCents['consumption']) data-tax-in-cents:consumption="{{ $taxInCents['consumption'] }}" @endisset
         @endisset></script>
     </form>
+    <h2>Personalización</h2>
+    <p><a href="">Boton de acceso al widget personalizable</a></p>
   </div>
 @endsection
