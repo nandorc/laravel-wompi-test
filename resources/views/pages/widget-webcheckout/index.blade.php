@@ -1,5 +1,2 @@
-@php
-$path = ['widget-webcheckout.index' => 'Widget y Webcheckout'];
-@endphp
-@extends('templates.layout-breadcrumb',['path'=>$path])
+@extends('templates.layout-breadcrumb')
 @section('head__title', 'Wiget y WebCheckout')
