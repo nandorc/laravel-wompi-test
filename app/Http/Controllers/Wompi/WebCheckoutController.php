@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Wompi;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class WidgetController extends Controller
+class WebCheckoutController extends Controller
 {
     public function checkResult(Request $request)
     {
@@ -15,7 +15,7 @@ class WidgetController extends Controller
         $result = json_encode(json_decode(@file_get_contents("$endpoint/transactions/$id"), true), JSON_PRETTY_PRINT);
         return view('pages.widget-webcheckout.response', ['result' => $result]);
     }
-    public function sendData(Request $request)
+    public function sendData(Request $request, $variant)
     {
         $paymentData = [
             // Valores obligatorios
@@ -24,7 +24,7 @@ class WidgetController extends Controller
             'currency' => 'COP', // Solo esta disponible el pago en COP
             'amountInCents' => '7890000', // Debe ser el valor en centavos (Ej. 100.000 = 10000000)
             // Valores opcionales
-            'redirectUrl' => route('widget-webcheckout.widget.response'), // ruta para el redireccionamiento
+            'redirectUrl' => route('widget-webcheckout.variant.response', ['variant' => $variant]), // ruta para el redireccionamiento
             'shippingAddress' => [
                 'addressLine1' => 'Carrera 123 # 4-5', // Requerido
                 'addressLine2' => 'apto 123',
@@ -49,7 +49,7 @@ class WidgetController extends Controller
                 'consumption' => '590000', // Impuesto de consumo
             ]
         ];
-        return view('pages.widget-webcheckout.widget', $paymentData);
+        return $variant == 'widget' ? view('pages.widget-webcheckout.widget', $paymentData) : view('pages.widget-webcheckout.webcheckout', $paymentData);
     }
     private function generatePaymentReference()
     {
