@@ -1,5 +1,2 @@
-@php
-$path = ['payment-api.index' => 'API de Pagos'];
-@endphp
-@extends('templates.layout-breadcrumb',['path'=>$path])
+@extends('templates.layout-breadcrumb')
 @section('head__title', 'API de Pagos')

@@ -1,5 +1,2 @@
-@php
-$path = ['plugins.index' => 'Plugins E-commerce'];
-@endphp
-@extends('templates.layout-breadcrumb',['path'=>$path])
+@extends('templates.layout-breadcrumb')
 @section('head__title', 'Plugins E-commerce')
