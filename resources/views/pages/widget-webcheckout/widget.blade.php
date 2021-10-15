@@ -47,6 +47,6 @@
         @endisset></script>
     </form>
     <h2>Personalización</h2>
-    <p><a href="">Boton de acceso al widget personalizable</a></p>
+    <p><a href="{{ route('widget-webcheckout.variant.custom', ['variant' => 'widget']) }}">Boton de acceso al widget personalizable</a></p>
   </div>
 @endsection

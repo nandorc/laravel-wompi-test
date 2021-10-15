@@ -13,7 +13,10 @@ class SetBreadcrumb
         'widget-webcheckout' => [
             'index' => ['label' => 'Widget y WebCheckout', 'route' => 'widget-webcheckout.index'],
             'widget' => [
-                'index' => ['label' => 'Widget', 'route' => 'widget-webcheckout.variant', 'params' => ['variant' => 'widget']]
+                'index' => ['label' => 'Widget', 'route' => 'widget-webcheckout.variant', 'params' => ['variant' => 'widget']],
+                'custom' => [
+                    'index' => ['label' => 'Custom Widget', 'route' => 'widget-webcheckout.variant.custom', 'params' => ['variant' => 'widget']]
+                ]
             ],
             'webcheckout' => [
                 'index' => ['label' => 'WebCheckout', 'route' => 'widget-webcheckout.variant', 'params' => ['variant' => 'webcheckout']]

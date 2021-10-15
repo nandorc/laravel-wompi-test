@@ -26,6 +26,7 @@ Route::prefix('/widget-webcheckout')->name('widget-webcheckout.')->group(functio
     })->name('index');
     Route::get('/{variant}', [WebCheckoutController::class, 'sendData'])->name('variant');
     Route::get('/{variant}/response', [WebCheckoutController::class, 'checkResult'])->name('variant.response');
+    Route::get('/{variant}/custom', [WebCheckoutController::class, 'sendData'])->name('variant.custom');
 });
 
 // ---------- PLUGINS ---------- //
