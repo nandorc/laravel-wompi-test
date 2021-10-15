@@ -10,6 +10,7 @@ class SetBreadcrumb
 {
     const BREADCRUMB_LIST = [
         'widget-webcheckout' => ['widget-webcheckout.index' => 'Widget y WebCheckout'],
+        'widget' => ['widget-webcheckout.widget' => 'Widget'],
         'plugins' => ['plugins.index' => 'Plugins E-commerce'],
         'payment-api' => ['payment-api.index' => 'API de Pagos'],
     ];
