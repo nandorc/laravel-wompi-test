@@ -13,19 +13,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// ---------- HOME ---------- //
 Route::get('/', function () {
     return view('pages.welcome');
 })->name('welcome');
+
+// ---------- WIDGET & WEBCHECKOUT ---------- //
 Route::prefix('/widget-webcheckout')->name('widget-webcheckout.')->group(function () {
     Route::get('/', function () {
         return view('pages.widget-webcheckout.index');
     })->name('index');
 });
+
+// ---------- PLUGINS ---------- //
 Route::prefix('/plugins')->name('plugins.')->group(function () {
     Route::get('/', function () {
         return view('pages.plugins.index');
     })->name('index');
 });
+
+// ---------- PAYMENT API ---------- //
 Route::prefix('/payment-api')->name('payment-api.')->group(function () {
     Route::get('/', function () {
         return view('pages.payment-api.index');
