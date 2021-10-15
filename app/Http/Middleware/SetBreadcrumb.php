@@ -9,24 +9,27 @@ use Illuminate\Support\Facades\View;
 class SetBreadcrumb
 {
     const BREADCRUMB_TREE = [
-        'index' => ['welcome' => 'Inicio'],
+        'index' => ['label' => 'Inicio', 'route' => 'welcome'],
         'widget-webcheckout' => [
-            'index' => ['widget-webcheckout.index' => 'Widget y WebCheckout'],
+            'index' => ['label' => 'Widget y WebCheckout', 'route' => 'widget-webcheckout.index'],
             'widget' => [
-                'index' => ['widget-webcheckout.widget' => 'Widget']
+                'index' => ['label' => 'Widget', 'route' => 'widget-webcheckout.variant', 'params' => ['variant' => 'widget']]
             ],
+            'webcheckout' => [
+                'index' => ['label' => 'WebCheckout', 'route' => 'widget-webcheckout.variant', 'params' => ['variant' => 'webcheckout']]
+            ]
         ],
         'plugins' => [
-            'index' => ['plugins.index' => 'Plugins E-commerce']
+            'index' => ['label' => 'Plugins E-commerce', 'route' => 'plugins.index']
         ],
         'payment-api' => [
-            'index' => ['payment-api.index' => 'API de Pagos']
+            'index' => ['label' => 'API de Pagos', 'route' => 'payment-api.index']
         ],
     ];
 
     private function buildBreadcrumb(array $path, array $breadcrumb = [], array $tree = SetBreadcrumb::BREADCRUMB_TREE)
     {
-        $breadcrumb = array_merge($breadcrumb, $tree['index']);
+        $breadcrumb[] = $tree['index'];
         if (sizeof($path) > 0 && isset($tree[$path[0]])) {
             $tree = $tree[$path[0]];
             array_shift($path);
