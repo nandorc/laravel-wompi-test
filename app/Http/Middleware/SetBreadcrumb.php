@@ -8,11 +8,30 @@ use Illuminate\Support\Facades\View;
 
 class SetBreadcrumb
 {
-    const BREADCRUMB_LIST = [
-        'widget-webcheckout' => ['widget-webcheckout.index' => 'Widget y WebCheckout'],
-        'plugins' => ['plugins.index' => 'Plugins E-commerce'],
-        'payment-api' => ['payment-api.index' => 'API de Pagos'],
+    const BREADCRUMB_TREE = [
+        'index' => ['welcome' => 'Inicio'],
+        'widget-webcheckout' => [
+            'index' => ['widget-webcheckout.index' => 'Widget y WebCheckout']
+        ],
+        'plugins' => [
+            'index' => ['plugins.index' => 'Plugins E-commerce']
+        ],
+        'payment-api' => [
+            'index' => ['payment-api.index' => 'API de Pagos']
+        ],
     ];
+
+    private function buildBreadcrumb(array $path, array $breadcrumb = [], array $tree = SetBreadcrumb::BREADCRUMB_TREE)
+    {
+        $breadcrumb = array_merge($breadcrumb, $tree['index']);
+        if (sizeof($path) > 0 && isset($tree[$path[0]])) {
+            $tree = $tree[$path[0]];
+            array_shift($path);
+            return $this->buildBreadcrumb($path, $breadcrumb, $tree);
+        } else {
+            return $breadcrumb;
+        }
+    }
 
     /**
      * Handle an incoming request.
@@ -23,16 +42,10 @@ class SetBreadcrumb
      */
     public function handle(Request $request, Closure $next)
     {
-        $breadcrumb = ['welcome' => 'Inicio'];
-        $paths = array_filter(explode('/', $request->path()), function ($value) {
+        $path = array_filter(explode('/', $request->path()), function ($value) {
             return $value != '';
         });
-        foreach ($paths as $path) {
-            if (isset(SetBreadcrumb::BREADCRUMB_LIST[$path])) {
-                $breadcrumb = array_merge($breadcrumb, SetBreadcrumb::BREADCRUMB_LIST[$path]);
-            }
-        }
-        View::share('breadcrumb', $breadcrumb);
+        View::share('breadcrumb', $this->buildBreadcrumb($path));
         return $next($request);
     }
 }
