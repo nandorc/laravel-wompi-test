@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Wompi;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class WidgetController extends Controller
+class WebCheckoutController extends Controller
 {
     public function checkResult(Request $request)
     {

@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Wompi\WidgetController;
+use App\Http\Controllers\Wompi\WebCheckoutController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,8 +24,8 @@ Route::prefix('/widget-webcheckout')->name('widget-webcheckout.')->group(functio
     Route::get('/', function () {
         return view('pages.widget-webcheckout.index');
     })->name('index');
-    Route::get('/widget', [WidgetController::class, 'sendData'])->name('widget');
-    Route::get('/widget/response', [WidgetController::class, 'checkResult'])->name('widget.response');
+    Route::get('/widget', [WebCheckoutController::class, 'sendData'])->name('widget');
+    Route::get('/widget/response', [WebCheckoutController::class, 'checkResult'])->name('widget.response');
 });
 
 // ---------- PLUGINS ---------- //
