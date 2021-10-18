@@ -2,7 +2,7 @@
 @section('head__title', 'Widget')
 @section('section__content')
   <div>
-    <h2>Información para el pago</h1>
+    <h2>Información para el pago</h2>
     <table>
       <tr>
         <td>Referencia de pago:</td>
@@ -47,6 +47,6 @@
         @endisset></script>
     </form>
     <h2>Personalización</h2>
-    <p><a href="">Boton de acceso al widget personalizable</a></p>
+    <p><a href="{{ route('widget-webcheckout.variant.custom', ['variant' => 'widget']) }}">Boton de acceso al widget personalizable</a></p>
   </div>
 @endsection
