@@ -49,7 +49,9 @@ class WebCheckoutController extends Controller
                 'consumption' => '590000', // Impuesto de consumo
             ]
         ];
-        return $variant == 'widget' ? view('pages.widget-webcheckout.widget', $paymentData) : view('pages.widget-webcheckout.webcheckout', $paymentData);
+        $viewName = 'pages.widget-webcheckout.';
+        $viewName .= $variant == 'widget' ? (strpos($request->path(), 'widget/custom') === false ? 'widget' : 'custom-widget-button') : 'webcheckout';
+        return view($viewName, $paymentData);
     }
     private function generatePaymentReference()
     {
