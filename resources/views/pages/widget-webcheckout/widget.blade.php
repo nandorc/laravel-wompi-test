@@ -2,7 +2,7 @@
 @section('head__title', 'Widget')
 @section('section__content')
   <div>
-    <h2>Información para el pago</h1>
+    <h2>Información para el pago</h2>
     <table>
       <tr>
         <td>Referencia de pago:</td>
